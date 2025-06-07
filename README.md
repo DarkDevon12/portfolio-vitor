@@ -1,5 +1,6 @@
 # 🧑‍💻 Portfólio Pessoal - Vitor
 
+![Imagem do meu portfólio](my-portifolio.png)
 Este é meu portfólio pessoal como desenvolvedor Front-end. Aqui você encontra alguns dos meus projetos, habilidades e formas de contato profissional.
 
 ## 🚀 Tecnologias
@@ -26,3 +27,5 @@ Entre em contato comigo através do [WhatsApp](https://wa.me/5517981117587?text=
 ---
 
 © 2025 - Vitor. Todos os direitos reservados.
+
+Este é meu portfólio pessoal como desenvolvedor Front-end. Aqui você encontra alguns dos meus projetos, habilidades e formas de contato profissional.
