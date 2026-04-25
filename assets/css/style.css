@@ -790,6 +790,8 @@ body.light-mode #home img#notebook-2-white {
   box-shadow: -1rem 1rem 1rem rgba(0, 0, 0, 0.267);
 
   transition: 400ms;
+
+  
 }
 
 #knowledge .card:hover {
@@ -1661,5 +1663,267 @@ footer .social-links li:nth-child(4) svg path:nth-child(2) {
   #contact .col-b::after {
     width: 9rem;
     height: 2rem;
+  }
+}
+
+/* ──────────────────────────────────────────
+   #CERTIFICATIONS — usa suas variáveis reais
+   ────────────────────────────────────────── */
+ 
+#certifications {
+  background-color: var(--secundary-color);
+}
+ 
+#certifications header {
+  margin-bottom: 1.6rem;
+}
+ 
+/* Subtítulo — segue o padrão de section p do seu CSS */
+.cert-subtitle {
+  max-width: 48rem;
+  margin: 0 auto 5rem;
+  text-align: center;
+}
+ 
+/* ── Stage (card grande + setas) ── */
+.cert-stage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.6rem;
+  margin-bottom: 1.6rem;
+}
+ 
+/* ── Card principal ── */
+.cert-main-card {
+  background: var(--bg-color);
+  border-radius: 0.6rem;
+  box-shadow: -1rem 1rem 1rem rgba(0, 0, 0, 0.267);
+  overflow: hidden;
+  width: 100%;
+  max-width: 52rem;
+  transition: 400ms;
+}
+ 
+.cert-main-card:hover {
+  background: var(--third-color);
+}
+ 
+/* ── Preview da imagem ── */
+.cert-preview-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 2.83;
+  overflow: hidden;
+  background: #111;
+}
+ 
+.cert-preview-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  transition: transform 400ms, filter 400ms;
+}
+ 
+/* Overlay com botão */
+.cert-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: 400ms;
+  backdrop-filter: blur(2px);
+}
+ 
+.cert-preview-wrap:hover .cert-overlay {
+  opacity: 1;
+  visibility: visible;
+}
+ 
+.cert-preview-wrap:hover img {
+  transform: scale(1.04);
+  filter: brightness(0.7);
+}
+ 
+/* Botão reutiliza sua classe .button */
+.cert-open-btn {
+  margin-bottom: 0; /* anula o margin-bottom: 6rem do .button */
+}
+ 
+/* ── Informações textuais ── */
+.cert-main-info {
+  padding: 2rem 2.4rem;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  border-top: 0.1rem solid var(--third-color);
+}
+ 
+/* Reutiliza section h4 para a instituição */
+.cert-issuer-label {
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.08rem;
+  color: var(--primary-color);
+  text-transform: uppercase;
+}
+ 
+/* h3 já está definido no seu CSS como color: var(--headline) */
+/* span já está definido como color: var(--paragraph) */
+ 
+/* ── Setas de navegação ── */
+.cert-arrow {
+  background: var(--bg-color);
+  border: 0.2rem solid var(--primary-color);
+  border-radius: 50%;
+  width: 4.4rem;
+  height: 4.4rem;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--primary-color);
+  transition: 400ms;
+}
+ 
+.cert-arrow:hover {
+  background: var(--primary-color);
+  color: #fff;
+}
+ 
+.cert-arrow:disabled {
+  opacity: 0.25;
+  cursor: not-allowed;
+}
+ 
+body.light-mode .cert-arrow:hover {
+  filter: brightness(0.8);
+}
+ 
+/* ── Contador ── */
+.cert-counter {
+  text-align: center;
+  margin-bottom: 2.4rem;
+}
+ 
+#cert-current {
+  color: var(--primary-color);
+  font-weight: 700;
+}
+ 
+/* ── Miniaturas ── */
+.cert-thumbs-wrapper {
+  overflow-x: auto;
+  padding-bottom: 0.8rem;
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-color) transparent;
+}
+ 
+.cert-thumbs-wrapper::-webkit-scrollbar {
+  height: 0.4rem;
+}
+.cert-thumbs-wrapper::-webkit-scrollbar-track {
+  background: transparent;
+}
+.cert-thumbs-wrapper::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 1rem;
+}
+ 
+.cert-thumbs {
+  display: flex;
+  gap: 0.8rem;
+  width: max-content;
+  margin: 0 auto;
+  padding: 0.4rem 0.2rem 0.6rem;
+}
+ 
+.cert-thumb {
+  background: var(--bg-color);
+  border: 0.2rem solid transparent;
+  border-radius: 0.6rem;
+  overflow: hidden;
+  cursor: pointer;
+  padding: 0;
+  width: 9rem;
+  aspect-ratio: 4 / 2.83;
+  flex-shrink: 0;
+  opacity: 0.5;
+  transition: 400ms;
+  box-shadow: -0.4rem 0.4rem 0.8rem rgba(0, 0, 0, 0.267);
+}
+ 
+.cert-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  pointer-events: none;
+}
+ 
+.cert-thumb:hover {
+  opacity: 0.8;
+  transform: translateY(-0.2rem);
+}
+ 
+.cert-thumb.active {
+  border-color: var(--primary-color);
+  opacity: 1;
+  transform: translateY(-0.3rem);
+  box-shadow: 0 0.4rem 1.6rem rgba(0, 133, 111, 0.25);
+}
+ 
+/* Animação de troca */
+.cert-main-card.cert-fade {
+  animation: certFade 0.28s ease;
+}
+ 
+@keyframes certFade {
+  0%   { opacity: 0; transform: translateY(0.6rem); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+ 
+/* ── Responsivo desktop ── */
+@media (min-width: 1024px) {
+  .cert-main-card {
+    max-width: 64rem;
+  }
+ 
+  .cert-thumb {
+    width: 11rem;
+  }
+ 
+  .cert-arrow {
+    width: 5rem;
+    height: 5rem;
+  }
+}
+ 
+/* ── Responsivo mobile pequeno ── */
+@media (max-width: 500px) {
+  .cert-stage {
+    gap: 0.8rem;
+  }
+ 
+  .cert-arrow {
+    width: 3.6rem;
+    height: 3.6rem;
+  }
+ 
+  .cert-thumb {
+    width: 7rem;
+  }
+ 
+  .cert-main-info {
+    padding: 1.4rem 1.6rem;
   }
 }
