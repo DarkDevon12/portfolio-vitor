@@ -283,6 +283,8 @@ a.logo {
   opacity: 0.7;
 }
 
+
+
 nav#navigation a.logo {
   color: var(--primary-color);
 }
@@ -1124,7 +1126,8 @@ footer .social-links li:nth-child(4) svg path:nth-child(2) {
   }
 
   nav#navigation .menu ul:nth-child(1) li {
-    width: 8.4rem;
+    width: auto;
+    padding-inline: 0.5rem;
     color: var(--paragraph);
   }
 
