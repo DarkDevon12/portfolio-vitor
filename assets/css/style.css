@@ -599,6 +599,40 @@ body.light-mode #home img#notebook-2-white {
   margin-bottom: 6rem;
 }
 
+#about .about-highlights {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.6rem;
+}
+
+#about .about-highlights li {
+  padding: 1.6rem;
+  background: var(--third-color);
+  border-left: 0.3rem solid var(--primary-color);
+  border-radius: 0.6rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+#about .about-highlights strong {
+  font-size: 2.8rem;
+  color: var(--primary-color);
+}
+
+#about .about-highlights span {
+  font-size: 1.4rem;
+  color: var(--paragraph);
+}
+
+@media (min-width: 1024px) {
+  #about .about-highlights {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
 #about .col-b {
   text-align: left;
 }
@@ -762,7 +796,13 @@ body.light-mode #home img#notebook-2-white {
   fill: #fff;
 }
 
-#projects .card:nth-child(8) svg path:nth-child(2) {
+/* "Em breve" ocupa a linha inteira, fechando a grade */
+#projects .card.soon {
+  grid-column: 1 / -1;
+  justify-content: center;
+}
+
+#projects .card.soon svg path:nth-child(2) {
   fill: var(--paragraph);
 }
 
@@ -777,35 +817,119 @@ body.light-mode #home img#notebook-2-white {
 }
 
 #knowledge .cards {
-  display: flex;
-  flex-direction: column;
-  gap: 3.2rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.4rem;
 }
 
 #knowledge .card {
+  --brand: var(--primary-color);
+
+  position: relative;
+  overflow: hidden;
   padding: 2.8rem;
   text-align: left;
 
   background: var(--secundary-color);
-
-  border-radius: 0.6rem;
+  border: 0.1rem solid var(--third-color);
+  border-radius: 1rem;
   box-shadow: -1rem 1rem 1rem rgba(0, 0, 0, 0.267);
 
-  transition: 400ms;
+  display: flex;
+  flex-direction: column;
 
-  
+  transition: transform 400ms, border-color 400ms, background 400ms;
+}
+
+/* Linha na cor da tecnologia que cresce no hover */
+#knowledge .card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 0.3rem;
+  background: var(--brand);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 400ms;
 }
 
 #knowledge .card:hover {
   background: var(--third-color);
+  border-color: color-mix(in srgb, var(--brand) 45%, transparent);
+  transform: translateY(-0.6rem);
 }
 
-#knowledge .card h3 {
-  margin-block: 1.6rem;
+#knowledge .card:hover::before {
+  transform: scaleX(1);
+}
+
+#knowledge .card .icon {
+  align-self: flex-start;
+  width: 7.2rem;
+  height: 7.2rem;
+  padding: 1.2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+
+  background: color-mix(in srgb, var(--brand) 12%, transparent);
+  border-radius: 1.2rem;
+
+  transition: transform 400ms, box-shadow 400ms;
+}
+
+/* Card com dois ícones (Git & GitHub) */
+#knowledge .card .icon:has(img + img) {
+  width: auto;
+}
+
+#knowledge .card:hover .icon {
+  transform: scale(1.08) rotate(-4deg);
+  box-shadow: 0 0 2.4rem color-mix(in srgb, var(--brand) 40%, transparent);
 }
 
 #knowledge .card img {
-  width: 10rem;
+  width: 4.8rem;
+  height: 4.8rem;
+  object-fit: contain;
+}
+
+/* Ícones pretos (GitHub, Vercel) ficam brancos no tema escuro */
+#knowledge .card img.invert-dark {
+  filter: invert(1);
+}
+
+body.light-mode #knowledge .card img.invert-dark {
+  filter: none;
+}
+
+#knowledge .card h3 {
+  margin-block: 2rem 1rem;
+}
+
+#knowledge .card p {
+  font-size: 1.5rem;
+  line-height: 1.6;
+}
+
+@media (min-width: 600px) {
+  #knowledge .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 10 cards: 2 fileiras de 5 em telas grandes */
+@media (min-width: 1200px) {
+  #knowledge .cards {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 2.4rem;
+  }
+
+  #knowledge .card {
+    padding: 2.4rem;
+  }
 }
 
 /*===== CONTACT ===============================================*/
@@ -1348,16 +1472,6 @@ footer .social-links li:nth-child(4) svg path:nth-child(2) {
     margin-inline: auto;
   }
 
-  #knowledge .cards {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 4rem;
-  }
-
-  #knowledge .card {
-    width: 30%;
-    flex-grow: 1;
-  }
 
   /*===== CONTACT =====================================*/
 
@@ -1778,6 +1892,13 @@ footer .social-links li:nth-child(4) svg path:nth-child(2) {
   text-transform: uppercase;
 }
  
+.cert-desc {
+  margin-top: 0.8rem;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  color: var(--paragraph);
+}
+
 /* h3 já está definido no seu CSS como color: var(--headline) */
 /* span já está definido como color: var(--paragraph) */
  

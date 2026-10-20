@@ -7,10 +7,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="description" content="Portifólio de Vitor Justino, desenvolvedor web Front-end" />
+    <meta name="description" content="Portfólio de Vitor Justino, desenvolvedor web Front-end" />
     <meta name="author" content="Vitor Justino" />
-    <meta property="og:description" content="Portifólio de Vitor Justino, desenvolvedor web Front-end" />
-    <meta property="og:image" content="./assets/images/imagem-de-Vitor-vestindo-camisa-social-branca-e-sorrindo-com-plantas-no-fundo.png" />
+    <meta property="og:description" content="Portfólio de Vitor Justino, desenvolvedor web Front-end" />
+    <meta property="og:image" content="./assets/images/projects/my-portifolio.png" />
     <meta property="og:type" content="website" />
     <meta name="keywords" content="developer, programação, dev, desenvolvedor, programador, html, css, javascript, nodejs, reactjs, react, github, frontend, front-end" />
     <meta name="robots" content="index" />
@@ -23,10 +23,10 @@
     <link rel="shortcut icon" href="./assets/icons/favicon.png" type="image/x-icon" />
     <link rel="stylesheet" href="./assets/css/style.css" />
 
-    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://unpkg.com/scrollreveal@4.0.9/dist/scrollreveal.min.js"></script>
     <script type="module" src="./assets/js/main.js" defer></script>
 
-    <title>Vitor // Portifólio</title>
+    <title>Vitor // Portfólio</title>
   </head>
 
   <body>
@@ -145,6 +145,18 @@
               Tenho uma base sólida em suporte técnico e tecnologia, o que reforça meu perfil organizado e analítico.
               Atualmente me aprofundo no ecossistema React e busco oportunidades para evoluir como desenvolvedor — com o objetivo de me tornar melhor ainda.
             </p>
+            <p>
+              Fora da sala de aula, já participei de três hackathons na faculdade — com temas como Cidades Inteligentes e IA e impacto social —
+              e apresentei meu projeto de agendamento para barbearias no Simpósio de Iniciação Científica.
+              Gosto de criar coisas que resolvam problemas reais, como o Alerta Golpe, que ajuda pessoas a identificar golpes digitais.
+            </p>
+
+            <ul class="about-highlights">
+              <li><strong>9</strong><span>projetos</span></li>
+              <li><strong>+45</strong><span>certificados</span></li>
+              <li><strong>3</strong><span>hackathons</span></li>
+              <li><strong>B2</strong><span>em inglês</span></li>
+            </ul>
           </div>
         </div>
 
@@ -179,32 +191,85 @@
 
         <div class="content">
           <div class="cards">
-
-            <div class="card">
-              <img src="./assets/images/html.png" alt="Ícone do HTML5." />
+            <div class="card" style="--brand: #E34F26">
+              <div class="icon">
+                <img src="./assets/images/html.png" alt="Ícone do HTML5." />
+              </div>
               <h3>HTML5</h3>
-              <p>HTML5 é uma linguagem de marcação de hipertexto, que usamos para marcar os elementos da página e construí-la.</p>
+              <p>Linguagem de marcação que uso para estruturar as páginas de forma semântica e acessível.</p>
             </div>
 
-            <div class="card">
-              <img src="./assets/images/css.png" alt="Ícone do CSS3." />
+            <div class="card" style="--brand: #1572B6">
+              <div class="icon">
+                <img src="./assets/images/css.png" alt="Ícone do CSS3." />
+              </div>
               <h3>CSS3</h3>
-              <p>CSS3 é uma linguagem de estilo usada para descrever a apresentação dos elementos da página os estilizando.</p>
+              <p>Linguagem de estilo com a qual dou vida às interfaces: layouts responsivos, animações e temas.</p>
             </div>
 
-            <div class="card">
-              <img src="./assets/images/js.png" alt="Ícone do Javascript." />
+            <div class="card" style="--brand: #F7DF1E">
+              <div class="icon">
+                <img src="./assets/images/js.png" alt="Ícone do JavaScript." />
+              </div>
               <h3>JavaScript</h3>
-              <p>JavaScript é uma linguagem de programação interpretada usada no desenvolvimento web para descrever funcionalidades e comportamentos da página.</p>
+              <p>Linguagem de programação que trago para as páginas para criar interações, consumir APIs e dar comportamento ao site.</p>
             </div>
 
-            <div class="card">
-              <img src="./assets/images/firebase-4.webp" alt="Ícone do Firebase." />
+            <div class="card" style="--brand: #61DAFB">
+              <div class="icon">
+                <img src="./assets/icons/react.svg" alt="Ícone do React." />
+              </div>
+              <h3>React</h3>
+              <p>Biblioteca JavaScript para criar interfaces com componentes reutilizáveis. Usei no painel da Academia UniBarretos.</p>
+            </div>
+
+            <div class="card" style="--brand: #FFCA28">
+              <div class="icon">
+                <img src="./assets/images/firebase-4.webp" alt="Ícone do Firebase." />
+              </div>
               <h3>Firebase</h3>
-              <p>
-                Firebase é uma plataforma do Google para desenvolvimento de aplicações web e mobile,
-                oferecendo serviços como banco de dados em tempo real, autenticação e hospedagem.
-              </p>
+              <p>Plataforma do Google com banco de dados em tempo real, autenticação e hospedagem. É a base do Alerta Golpe.</p>
+            </div>
+
+            <div class="card" style="--brand: #F05032">
+              <div class="icon">
+                <img src="./assets/icons/git.svg" alt="Ícone do Git." />
+                <img src="./assets/icons/github.svg" alt="Ícone do GitHub." class="invert-dark" />
+              </div>
+              <h3>Git &amp; GitHub</h3>
+              <p>Versiono meu código com Git e publico meus projetos no GitHub, mantendo histórico e organização.</p>
+            </div>
+
+            <div class="card" style="--brand: #A1A1AA">
+              <div class="icon">
+                <img src="./assets/icons/vercel.svg" alt="Ícone do Vercel." class="invert-dark" />
+              </div>
+              <h3>Vercel</h3>
+              <p>Plataforma de deploy onde publico projetos como o Alerta Golpe e o Acolhe Pet de forma rápida e com HTTPS.</p>
+            </div>
+
+            <div class="card" style="--brand: #31A8FF">
+              <div class="icon">
+                <img src="./assets/icons/photoshop.svg" alt="Ícone do Photoshop." />
+              </div>
+              <h3>Photoshop</h3>
+              <p>Editor de imagens da Adobe que uso para criar artes, banners e tratar as imagens dos meus projetos.</p>
+            </div>
+
+            <div class="card" style="--brand: #F2C811">
+              <div class="icon">
+                <img src="./assets/icons/powerbi.svg" alt="Ícone do Power BI." />
+              </div>
+              <h3>Power BI</h3>
+              <p>Ferramenta da Microsoft para análise de dados, onde crio dashboards interativos e relatórios que transformam dados em decisões.</p>
+            </div>
+
+            <div class="card" style="--brand: #21A366">
+              <div class="icon">
+                <img src="./assets/icons/excel.svg" alt="Ícone do Excel." />
+              </div>
+              <h3>Excel Avançado</h3>
+              <p>Planilhas com fórmulas avançadas, tabelas dinâmicas e gráficos para organizar, analisar e apresentar dados.</p>
             </div>
 
           </div>
@@ -266,6 +331,7 @@
               <span id="cert-main-issuer" class="cert-issuer-label">Instituição</span>
               <h3 id="cert-main-title">Título do Certificado</h3>
               <span id="cert-main-year">2024</span>
+              <p id="cert-main-desc" class="cert-desc"></p>
             </div>
 
           </div>
@@ -283,149 +349,12 @@
         <p class="cert-counter">
           <span id="cert-current">1</span>
           <span class="cert-sep"> / </span>
-          <span id="cert-total">13</span>
+          <span id="cert-total"></span>
         </p>
 
         <!-- Certificados -->
         <div class="cert-thumbs-wrapper">
-          <div class="cert-thumbs" id="cert-thumbs">
-
-            <button class="cert-thumb active" data-index="0"
-              data-img="./assets/certificates/cert-01.jpg"
-              data-pdf="./assets/certificates/cert-01.jpg"
-              data-title="Segurança Digital"
-              data-issuer="Harena Inovation"
-              data-year="2026">
-              <img src="./assets/certificates/cert-01.jpg" alt="Certificado 1" />
-            </button>
-
-            <button class="cert-thumb" data-index="1"
-              data-img="./assets/certificates/cert-02.jpg"
-              data-pdf="./assets/certificates/cert-02.jpg"
-              data-title="Introdução ao Sistema Linux"
-              data-issuer="Santander"
-              data-year="2026">
-              <img src="./assets/certificates/cert-02.jpg" alt="Certificado 2" />
-            </button>
-
-            <button class="cert-thumb" data-index="2"
-              data-img="./assets/certificates/cert-03.jpg"
-              data-pdf="./assets/certificates/cert-03.jpg"
-              data-title="Dispositivos e Conceitos de Realidade Virtual"
-              data-issuer="Harena Inovation"
-              data-year="2026">
-              <img src="./assets/certificates/cert-03.jpg" alt="Certificado 3" />
-            </button>
-
-            <button class="cert-thumb" data-index="3"
-              data-img="./assets/certificates/cert-04.jpg"
-              data-pdf="./assets/certificates/cert-04.jpg"
-              data-title="Introdução a Inteligência Artificial"
-              data-issuer="Dio.me"
-              data-year="2026">
-              <img src="./assets/certificates/cert-04.jpg" alt="Certificado 4" />
-            </button>
-
-            <button class="cert-thumb" data-index="4"
-              data-img="./assets/certificates/cert-05.jpg"
-              data-pdf="./assets/certificates/cert-05.jpg"
-              data-title="B2 Upper intermediate in English Language"
-              data-issuer="EF SET"
-              data-year="2026">
-              <img src="./assets/certificates/cert-05.jpg" alt="Certificado 5" />
-            </button>
-
-            <button class="cert-thumb" data-index="5"
-              data-img="./assets/certificates/cert-06.jpg"
-              data-pdf="./assets/certificates/cert-06.jpg"
-              data-title="Html 5 na prática"
-              data-issuer="Dio.me"
-              data-year="2024">
-              <img src="./assets/certificates/cert-06.jpg" alt="Certificado 6" />
-            </button>
-
-            <button class="cert-thumb" data-index="6"
-              data-img="./assets/certificates/cert-07.jpg"
-              data-pdf="./assets/certificates/cert-07.jpg"
-              data-title="Html Recursos Especiais"
-              data-issuer="Dio.me"
-              data-year="2024">
-              <img src="./assets/certificates/cert-07.jpg" alt="Certificado 7" />
-            </button>
-
-            <button class="cert-thumb" data-index="7"
-              data-img="./assets/certificates/cert-08.jpg"
-              data-pdf="./assets/certificates/cert-08.jpg"
-              data-title="Estilizações Básicas com CSS"
-              data-issuer="Dio.me"
-              data-year="2024">
-              <img src="./assets/certificates/cert-08.jpg" alt="Certificado 8" />
-            </button>
-
-            <button class="cert-thumb" data-index="8"
-              data-img="./assets/certificates/cert-09.jpg"
-              data-pdf="./assets/certificates/cert-09.jpg"
-              data-title="Fundamentos do CSS"
-              data-issuer="Dio.me"
-              data-year="2024">
-              <img src="./assets/certificates/cert-09.jpg" alt="Certificado 9" />
-            </button>
-
-            <button class="cert-thumb" data-index="9"
-              data-img="./assets/certificates/cert-10.jpg"
-              data-pdf="./assets/certificates/cert-10.jpg"
-              data-title="1° Hackaton - Sistemas da Informação na Faculdade Barretos"
-              data-UniBarretos"
-              data-year="2023">
-              <img src="./assets/certificates/cert-10.jpg" alt="Certificado 10" />
-            </button>
-
-            <button class="cert-thumb" data-index="10"
-              data-img="./assets/certificates/cert-11.jpg"
-              data-pdf="./assets/certificates/cert-11.jpg"
-              data-title="2° Hackaton - Sistemas da Informação na Faculdade Barretos"
-              data-issuer="UniBarretos"
-              data-year="2024">
-              <img src="./assets/certificates/cert-11.jpg" alt="Certificado 11" />
-            </button>
-
-            <button class="cert-thumb" data-index="11"
-              data-img="./assets/certificates/cert-12.jpg"
-              data-pdf="./assets/certificates/cert-12.jpg"
-              data-title="3° Hackaton - Sistemas da Informação na Faculdade Barretos"
-              data-issuer="UniBarretos"
-              data-year="2025">
-              <img src="./assets/certificates/cert-12.jpg" alt="Certificado 12" />
-            </button>
-
-            <button class="cert-thumb" data-index="12"
-              data-img="./assets/certificates/cert-13.jpg"
-              data-pdf="./assets/certificates/cert-13.jpg"
-              data-title="Simpósio Harena Inovation da Faculdade Barretos"
-              data-issuer="UniBarretos"
-              data-year="2024">
-              <img src="./assets/certificates/cert-13.jpg" alt="Certificado 13" />
-            </button>
-
-              <button class="cert-thumb" data-index="13"
-              data-img="./assets/certificates/cert-14.jpg"
-              data-pdf="./assets/certificates/cert-14.jpg"
-              data-title="Prompt de Inteligência Artificial"
-              data-issuer="Harena Inovation"
-              data-year="2025">
-              <img src="./assets/certificates/cert-14.jpg" alt="Certificado 14" />
-            </button>
-
-              <button class="cert-thumb" data-index="13"
-              data-img="./assets/certificates/cert-15.jpg"
-              data-pdf="./assets/certificates/cert-15.jpg"
-              data-title="Oficina de Modelagem e Prototipação em Impressão 3D"
-              data-issuer="Harena Inovation"
-              data-year="2025">
-              <img src="./assets/certificates/cert-14.jpg" alt="Certificado 14" />
-            </button>
-
-          </div>
+          <div class="cert-thumbs" id="cert-thumbs"></div>
         </div>
         <!-- /cert-thumbs-wrapper -->
 
@@ -465,7 +394,7 @@
             <a
               class="button"
               title="Me chama no zap!"
-              href="https://api.whatsapp.com/send?phone=5517981117587&text=Fala,%20Vitor!%20Vim%20do%20teu%20portifólio,%20quero%20trabalhar%20contigo!"
+              href="https://api.whatsapp.com/send?phone=5517981117587&text=Fala,%20Vitor!%20Vim%20do%20teu%20portfólio,%20quero%20trabalhar%20contigo!"
               target="_blank"
             >
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -505,7 +434,7 @@
         <div class="col-a">
           <a class="logo" href="#home">vitorjustino</a>
           <p>
-            ©2025 por VDDSTUDIOS. <br />
+            ©2026 por VDDSTUDIOS. <br />
             Todos os direitos reservados.
           </p>
         </div>

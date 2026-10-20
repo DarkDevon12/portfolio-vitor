@@ -1,4 +1,5 @@
 import { projetos } from "./projetos.js";
+import { certificados } from "./certificados.js";
 
 const navigation = document.querySelector("#navigation");
 const backToTopButton = document.querySelector("#backToTopButton");
@@ -10,9 +11,9 @@ const notebook_2 = document.querySelector("#notebook-2");
 const notebook_2_white = document.querySelector("#notebook-2-white");
 const vidro = document.querySelector("#vidro");
 
-window.addEventListener("load", function begin() {
-  projetos(projectsSection);
-});
+// O script é um módulo (já roda após o HTML), então os projetos
+// podem ser renderizados direto, sem esperar todas as imagens carregarem.
+projetos(projectsSection);
 
 window.addEventListener("scroll", onScroll);
 onScroll();
@@ -33,6 +34,7 @@ function onScroll() {
   activateMenuAtCurrentSection(about);
   activateMenuAtCurrentSection(projects);
   activateMenuAtCurrentSection(knowledge);
+  activateMenuAtCurrentSection(certifications);
   activateMenuAtCurrentSection(contact);
 }
 
@@ -109,8 +111,9 @@ ScrollReveal({
   #projects header,
   #projects .card,
   #knowledge,
-  #knowledg header,
-  #knowledg .card,
+  #knowledge header,
+  #knowledge .card,
+  #certifications,
   #contact,
   #contact header`
 );
@@ -121,6 +124,22 @@ toggle.addEventListener("change", () => {
 
 // ── Certificações ───────────────────────────────────
 (function initCertSlider() {
+  const thumbsRow = document.getElementById('cert-thumbs');
+  if (!thumbsRow) return;
+
+  // Gera as miniaturas a partir da lista em certificados.js
+  thumbsRow.innerHTML = certificados.map((cert, i) => `
+    <button class="cert-thumb" data-index="${i}"
+      data-img="./assets/certificates/${cert.img}"
+      data-pdf="./assets/certificates/${cert.img}"
+      data-title="${cert.title.replace(/"/g, '&quot;')}"
+      data-issuer="${cert.issuer}"
+      data-year="${cert.year}"
+      data-desc="${cert.desc.replace(/"/g, '&quot;')}"
+      aria-label="${cert.title.replace(/"/g, '&quot;')}">
+      <img src="./assets/certificates/${cert.img}" alt="" loading="lazy" />
+    </button>`).join('');
+
   const thumbs    = Array.from(document.querySelectorAll('.cert-thumb'));
   const mainImg   = document.getElementById('cert-main-img');
   const mainLink  = document.getElementById('cert-main-link');
@@ -132,8 +151,8 @@ toggle.addEventListener("change", () => {
   const nextBtn   = document.querySelector('.cert-arrow-next');
   const currentEl = document.getElementById('cert-current');
   const totalEl   = document.getElementById('cert-total');
-  const thumbsRow = document.getElementById('cert-thumbs');
- 
+  const mainDesc  = document.getElementById('cert-main-desc');
+
   if (!thumbs.length) return;
  
   let current = 0;
@@ -163,6 +182,7 @@ toggle.addEventListener("change", () => {
     mainTitle.textContent  = title;
     mainIssuer.textContent = issuer;
     mainYear.textContent   = year;
+    if (mainDesc) mainDesc.textContent = thumb.dataset.desc;
  
     // Contador
     if (currentEl) currentEl.textContent = index + 1;
